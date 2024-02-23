@@ -1,0 +1,56 @@
+// class Solution {
+// public:
+//     int maxFrequencyElements(vector<int>& nums) {
+//         int arr[100] = {0};
+//         if(nums.size() == 1)
+//         return 1;
+//         for(int i = 0;i<nums.size();i++)
+//         {
+//             arr[nums[i]]++;
+//         }
+//         int l = -1;
+//         for(int i = 0;i<10;i++)
+//         {
+//             if(arr[i]>l)
+//             l=arr[i];
+//         }
+//         int c = 0;
+
+//         for(int i = 0;i<10;i++)
+//         {
+//             if(arr[i] == l)
+//             c+=arr[i];
+//         }
+//         return c;
+//     }
+// };
+class Solution
+{
+public:
+    int maxFrequencyElements(vector<int> &nums)
+    {
+        vector<int> freq(101, 0);
+        
+        // Calculate frequencies of each element
+        for (int i = 0; i < nums.size(); i++)
+        {
+            freq[nums[i]]++;
+        }
+        
+        int ans = 0;     // Total count of elements with maximum 
+        int temp = 0;    // Current maximum frequency
+        
+        // Iterate through the frequencies
+        for (int i = 1; i < 101; i++)
+        {
+            if (freq[i] == temp) {
+                ans += freq[i];
+            } else if (freq[i] > temp) {
+                ans = freq[i];
+                temp = freq[i];
+            }
+        }
+        
+        return ans;
+    }
+};
