@@ -1,0 +1,48 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) 
+    {
+        int bit = 0;
+        int c = 0;
+        if(n<0)
+        return false;
+        while(n!=0)
+        {
+            bit = n&1;
+            if(bit==1)
+            c++;
+            n = n>>1;
+        }
+        if(c == 1)
+        return true;
+        return false;
+    }
+}
+#include<cmath>
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+        if(n <=  0)
+        return false;
+        double log3_n = log10(n) / log10(3);
+        return (log3_n) == int(log3_n);
+    }
+};
+#include<cmath>
+class Solution {
+public:
+    bool isPowerOfFour(int n) 
+    {
+        if(n <= 0)
+        return false;
+        while(n>1)
+        {
+            if(n%4 != 0)
+            {
+            return false;
+            }
+            n/=4;
+        }
+        return true;
+
+    }
+};
