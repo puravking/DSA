@@ -25,6 +25,7 @@ public:
                 break;
             }
         }
+
         if(fast == NULL || fast -> next == NULL)
         return NULL;
          slow = head;
