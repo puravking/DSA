@@ -1,0 +1,30 @@
+class Solution {
+public:
+    void subset2(int ind,vector<int> &arr,vector<int> &ds,vector<vector<int>> &ans)
+    {
+        if(ind >= arr.size())
+        {
+            vector<int> sorted_ds = ds;
+            sort(sorted_ds.begin(), sorted_ds.end());
+            for(int i = 0;i<ans.size();i++)
+            {
+                if(ans[i] == sorted_ds)
+                return;
+            }
+            ans.push_back(sorted_ds);
+            return;
+        }
+        subset2(ind+1,arr,ds,ans);
+        int n = arr[ind];
+        ds.push_back(n);
+        subset2(ind+1,arr,ds,ans);
+        ds.pop_back();
+    }
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) 
+    {
+        vector<vector<int>> ans;
+        vector<int> ds;
+        subset2(0,nums,ds,ans);
+        return ans;
+    }
+};
