@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int romanToInt(string s) 
+    {
+        map<char,int> table;
+        table['I'] = 1;
+        
+        table['V'] = 5;
+        table['X'] = 10;
+        table['L'] = 50;
+        table['C'] = 100;
+        table['D'] = 500;
+        table['M'] = 1000;
+        int ans = 0;
+        int n = s.length();
+        for(int i = n-1;i>=0;i--)
+        {
+            if(i>0 && table[s[i]] > table[s[i-1]])
+            {
+                ans+=table[s[i]] - table[s[i-1]];
+                i--;
+            }
+            
+            else
+            ans+=table[s[i]];
+        }
+        return ans;
+
+        
+    }
+};
