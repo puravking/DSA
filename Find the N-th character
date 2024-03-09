@@ -1,0 +1,23 @@
+class Solution{
+  public:
+    char nthCharacter(string s, int r, int n) {
+        //code here
+        string copy = s;
+        while(r--)
+        {
+            string ans="";
+            for(int i = 0;i<n+1;i++)
+            {
+                if(copy[i] == '1')
+                {
+                    ans+="10";
+                }
+                else
+                ans+="01";
+            }
+            copy=ans;
+        }
+        return copy[n];
+        
+    }
+};
