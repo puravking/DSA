@@ -1,0 +1,25 @@
+
+class Solution {
+public:
+    int fun(int n)
+    {
+        int ans  = 0, d;
+        while(n > 0)
+        {
+            d = n % 10;
+            ans += d * d;
+            n /= 10;
+        }
+        return ans;
+    }
+    bool isHappy(int num) {
+      int slow = num;
+      int fast = num;
+      do
+      {
+          slow = fun(slow);
+          fast = fun(fun(fast));
+      } while (slow != fast);
+      return slow ==1;
+    }
+};
