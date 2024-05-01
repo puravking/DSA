@@ -13,8 +13,6 @@
 //                 for(int k= j+1;k<nums.size();k++)
 //                 {
 
-
-
 //                     if(nums[i]+nums[j]+nums[k] == 0)
 //                     matrix.push_back({nums[i],nums[j],nums[k]});
 //                 }
