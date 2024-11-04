@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void combi(int ind,int n, int k, vector<int> &ds,vector<vector<int>> &ans)
+    void combi(int ind,int n, int k, vector<int> &ds,vector <vector<int>> &ans)
     {
         if(ds.size() == k)
         {
