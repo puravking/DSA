@@ -8,7 +8,7 @@ public:
             if (c == '(') {
                 st.push(c);
             } else if (c == ')') {  
-                st.pop();
+                st.pop(); 
             }  
             
             ans = max(ans, (int)st.size());
