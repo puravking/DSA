@@ -15,7 +15,7 @@
 
 //                     if(nums[i]+nums[j]+nums[k] == 0)
 //                     matrix.push_back({nums[i],nums[j],nums[k]});
-//                 }
+//                 } 
 //             }
 //         }  
 //         return matrix;
