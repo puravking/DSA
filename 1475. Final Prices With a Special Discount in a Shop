@@ -11,7 +11,7 @@ public:
                 prices[idx] -= prices[i];
             }
             st.push(i);
-        }
+        }  
 
         return prices;
     }
