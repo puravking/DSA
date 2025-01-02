@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> vowelStrings(vector<string>& words, vector<vector<int>>& queries) {
+        vector<int> vec;
+        int cnt = 0;
+        for(auto &it:words) {
+            if((it[0] == 'a' || it[0] == 'e' || it[0] == 'i' || it[0] == 'o' || it[0] == 'u') &&
+            (it[it.length()-1] == 'a' || it[it.length()-1] == 'e' || it[it.length()-1] == 'i' 
+            || it[it.length()-1] == 'o' || it[it.length()-1] == 'u'))
+            {
+                cnt++;
+                vec.push_back(cnt);
+            }
+            else vec.push_back(cnt);
+        }
+        vector<int> res;
+        for(auto &it:queries) {
+            int a = it[0];
+            int b = it[1];
+            if(a>0)
+            res.push_back(vec[b]-vec[a-1]);
+            else 
+                res.push_back(vec[b]);
+        }
+        return res;
+    }
+};
