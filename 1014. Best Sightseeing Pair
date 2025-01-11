@@ -1,4 +1,4 @@
-int dp[50000];// for max i
+int dp[50000];
 class Solution {
 public:
     int score=0;
