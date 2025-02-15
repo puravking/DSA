@@ -7,7 +7,7 @@ public:
         if(dp[i]!=0) return dp[i];
         int x=values[i], prev=f(i-1, values);
         score=max(score, prev+x-i);
-        return dp[i]=max(prev, x+i);
+        return dp[i]=max(prev, x+i); 
     ;
     int maxScoreSightseeingPair(vector<int>& values) {
         const int n = values.size();
